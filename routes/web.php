@@ -7,5 +7,5 @@ use App\Http\Controllers\ArticleController;
 
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
-Route::get('/article/{id?}', [IndexController::class, 'show'])->name('article.details');
+Route::get('/article/{id}', [ArticleController::class, 'show'])->name('article.details');
 
