@@ -8,4 +8,6 @@ use App\Http\Controllers\ArticleController;
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::get('/article/{id}', [ArticleController::class, 'show'])->name('article.details');
-Route::fallback(function () { return response() ->view('errors.not-found', [], 404)});
+Route::fallback(function () { 
+    return view('errors.not-found');
+});
