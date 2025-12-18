@@ -3,21 +3,20 @@
 @section('title', 'Accueil')
 
 @section('content')
-     <h1>Bienvenue sur le site de {{$name}}</h1>
+    <h2>Bienvenue sur le site de {{ $name }}</h2>
 
-    @forelse ($articles as $article)
+    @foreach ($articles as $article)
 
         @if ($loop->last)
             @break
         @endif
 
-    <x-article
-        :title="$article['title']"
-        :description="$article['description']"
-    />
+        <a href="{{ route('article.details', $article->id) }}">
+            <x-article
+                :title="$article->title"
+                :description="$article->description"
+            />
+        </a>
 
-    @empty
-        <p>Aucun article disponible.</p>
-    @endforelse
-    
+    @endforeach
 @endsection
