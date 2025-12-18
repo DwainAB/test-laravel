@@ -3,7 +3,7 @@
 @section('title', 'Accueil')
 
 @section('content')
-    <h2>Bienvenue sur la page d’accueil</h2>
+     <h1>Bienvenue sur le site de {{$name}}</h1>
 
     @forelse ($articles as $article)
 
